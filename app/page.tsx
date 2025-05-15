@@ -1,6 +1,23 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+/**
+ * generate 32KB of random text
+ */
+function randomText() {
+  const possible =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+  return Array.from({ length: 32 * 1024 }, () =>
+    possible.charAt(Math.floor(Math.random() * possible.length))
+  ).join("");
+}
+
+export const metadata = {
+  title: 'This will not be visible if shared via slack.',
+  description: 'This will also not be visible if shared via slack.'
+}
+
 export default function Home() {
   return (
     <div className={styles.page}>
@@ -19,6 +36,12 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+
+        <style>{`
+          .${randomText()} {
+            color: red;
+          }
+        `}</style>
 
         <div className={styles.ctas}>
           <a
