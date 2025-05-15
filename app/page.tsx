@@ -2,21 +2,21 @@ import Image from "next/image";
 import styles from "./page.module.css";
 
 /**
- * generate 32KB of random text
+ * generate 1024KB of random text
  */
 function randomText() {
   const possible =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-  return Array.from({ length: 32 * 1024 }, () =>
+  return Array.from({ length: 1024 ** 2 }, () =>
     possible.charAt(Math.floor(Math.random() * possible.length))
   ).join("");
 }
 
 export const metadata = {
-  title: 'This will not be visible if shared via Slack',
-  description: 'This will also not be visible if shared via Slack'
-}
+  title: "This will not be visible if shared via Slack",
+  description: "This will also not be visible if shared via Slack",
+};
 
 export default function Home() {
   return (
@@ -37,7 +37,7 @@ export default function Home() {
           <li>Save and see your changes instantly.</li>
         </ol>
 
-        <style href='large-css' precedence="abc">{`
+        <style href="large-css" precedence="abc">{`
           .${randomText()} {
             color: red;
           }
