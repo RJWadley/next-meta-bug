@@ -14,8 +14,8 @@ function randomText() {
 }
 
 export const metadata = {
-  title: 'This will not be visible if shared via slack.',
-  description: 'This will also not be visible if shared via slack.'
+  title: 'This will not be visible if shared via Slack',
+  description: 'This will also not be visible if shared via Slack'
 }
 
 export default function Home() {
