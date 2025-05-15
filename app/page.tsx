@@ -37,7 +37,7 @@ export default function Home() {
           <li>Save and see your changes instantly.</li>
         </ol>
 
-        <style>{`
+        <style href='large-css' precedence="abc">{`
           .${randomText()} {
             color: red;
           }
